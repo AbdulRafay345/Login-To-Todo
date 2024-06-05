@@ -1,0 +1,77 @@
+body {
+    background: url(../assets/WhatsApp\ Image\ 2024-06-05\ at\ 09.15.11_ff1d8794.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header #loggedInEmail {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 5px;
+}
+
+main {
+    min-height: calc(100vh - 137px);
+}
+
+#forms {
+    width: 420px;
+    border: solid 1px rgba(252, 252, 252, .2);
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(252, 252, 252, .8);
+    backdrop-filter: blur(20%);
+    position: relative;
+    border: none;
+    outline: none;
+    padding: 10px 30px 0;
+}
+
+#forms input {
+    width: 100%;
+    height: 50px;
+    border: solid 2px rgba(0, 0, 0, .7);
+    border-radius: 40px;
+    margin: 10px 0;
+    padding: 0 0 0 25px;
+    background-color: transparent;
+}
+
+#forms input::placeholder {
+    color: #000;
+}
+
+#mainBtn,
+#mainBtn2 {
+    width: 100%;
+    height: 50px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #000;
+    font-size: larger;
+    text-align: right;
+}
+
+i {
+    position: absolute;
+    margin-top: 25px;
+    right: 50px;
+}
+
+
+#todos input,
+textarea {
+    width: 300px;
+}
+
+#forms,
+#register,
+#login,
+#todos {
+    display: none;
+}

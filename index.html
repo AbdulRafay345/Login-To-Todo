@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootsrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- toastify css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Document</title>
+</head>
+
+<body class="d-flex flex-column justify-content-center min-vh-100" id="body">
+
+    <header class="bg-dark">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon btn btn-outline-light"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active text-white aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white href="#">Link</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <p id="loggedInEmail"></p>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow-1 d-flex justify-content-center align-items-center">
+
+
+        <div class="container" id="forms">
+
+            <div class="row" id="register">
+                <div class="col">
+                    <form onsubmit="registerUsers()">
+                        <h3 class="mt-2">Register</h3>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" name="name" id="registerName" placeholder="Name">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="email" name="email" id="registerEmail" placeholder="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="password" name="password" id="registerPassword" placeholder="Password">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn text-center btn-dark" id="mainBtn">Register</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="small">Already have an account?<button class="btn text-end"
+                                        onclick="showLogin()">login</button></p>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="row my-4" id="login">
+                <div class="col">
+                    <form onsubmit="loginUser()">
+                        <h3>Login</h3>
+                        <div class="row">
+                            <div class="col">
+                                <input type="email" name="email" id="loginEmail" placeholder="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="password" name="password" id="loginPassword" placeholder="Password">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn text-center btn-dark" id="mainBtn2">Login</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="small">Don't have an account?<button class="btn"
+                                        onclick="showRegister()">Register</button></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+
+            <div class="container" id="todos">
+
+                <div class="row">
+                    <div class="col col-12 col-lg-6 py-2 text-center border border-dark">
+                        <h3>Enter Your Todo list</h3>
+                        <div class="row my-2">
+                            <div class="col">
+                                <input type="text" name="title" id="title" placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <textarea name="description" id="description" placeholder="Description"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <input type="date" name="date" id="date">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                    <div class="col col-12 col-lg-6">
+                        <button type="submit" class="btn text-center m-2 btn-dark" onclick="createTodo()">Create
+                            Todo</button>
+                        <button type="submit" class="btn text-center m-2 btn-primary" onclick="readTodo()">Read
+                            Todo</button>
+                        <button type="submit" class="btn text-center m-2 btn-warning" onclick="updateTodo()">Update
+                            Todo</button>
+                        <button type="submit" class="btn text-center m-2 btn-success" onclick="deleteTodo()">Delete
+                            Todo</button>
+                        <button type="submit" class="btn text-center m-2 btn-outline-success" onclick="showTable()">Show
+                            Table</button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div id="table"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    </main>
+
+    <footer class="bg-dark">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-center text-white">
+                    <p>&copy;<span id="footerYear"></span>. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <!-- bootsrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- toastify js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
